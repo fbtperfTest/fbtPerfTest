@@ -87,11 +87,6 @@
             <stringProp name="Argument.value">C:\FBT Project\FBT Performance Test\FBT-Performance-Test\</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="uploadCount" elementType="Argument">
-            <stringProp name="Argument.name">uploadCount</stringProp>
-            <stringProp name="Argument.value">5</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -140,7 +135,7 @@
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames">FirmId,userName,orgName,reportingEntity,workpaper,uploadTest,uploadFileName,EntityWorkpaper,create</stringProp>
+        <stringProp name="variableNames">FirmId,userName,orgName,reportingEntity,workpaper,uploadTest,uploadFileName,EntityWorkpaper,create,uploadCount</stringProp>
       </CSVDataSet>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
