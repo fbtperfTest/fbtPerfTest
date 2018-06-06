@@ -64,7 +64,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="BASE_URL_1" elementType="Argument">
             <stringProp name="Argument.name">BASE_URL_1</stringProp>
-            <stringProp name="Argument.value">fbtapp-uat.onesourcetax.com</stringProp>
+            <stringProp name="Argument.value">mel-tlrbld-p29</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="password" elementType="Argument">
@@ -79,12 +79,12 @@
           </elementProp>
           <elementProp name="portnumber" elementType="Argument">
             <stringProp name="Argument.name">portnumber</stringProp>
-            <stringProp name="Argument.value">82</stringProp>
+            <stringProp name="Argument.value">5101</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="path" elementType="Argument">
             <stringProp name="Argument.name">path</stringProp>
-            <stringProp name="Argument.value">C:\Shanaka_Jmeter\New folder\JmeterTest\JmeterTest\</stringProp>
+            <stringProp name="Argument.value">C:\FBT Project\FBT Performance Test\FBT-Performance-Test\</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="uploadCount" elementType="Argument">
@@ -159,7 +159,7 @@
       </ThreadGroup>
       <hashTree>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
-          <stringProp name="IncludeController.includepath">C:\Shanaka_Jmeter\New folder\JmeterTest\JmeterTest\LoginOnly.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">LoginOnly.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="reportingEntities/select" enabled="true">
@@ -511,7 +511,7 @@
           <hashTree/>
         </hashTree>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="false">
-          <stringProp name="IncludeController.includepath">C:\Shanaka_Jmeter\New folder\JmeterTest\JmeterTest\DeleteAll.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">C:\FBT Project\FBT Performance Test\FBT-Performance-Test\ProjectFiles\LoginOnly.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Lafha Selection" enabled="true">
