@@ -9001,6 +9001,1005 @@ var client=&quot;${FirmId}&quot;;
           </CSVDataSet>
           <hashTree/>
         </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Entertainment Validate and Create Selection" enabled="true">
+          <stringProp name="IfController.condition">(&quot;${create}&quot;==&quot;1&quot;)&amp;&amp;(&quot;${workpaper}&quot; ==&quot;entertainment&quot;)</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="entertainmentType Validation" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;entertainmentTypeUID&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;entertainmentTypeUID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;2018-03-31T00:00:00&quot;,&#xd;
+		&quot;totalCost&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: false,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: null,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;788cb669-2802-475f-a428-9a1943078aff&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: null,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: null,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: false,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="actualBenefitReturnTypeUID validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;actualBenefitReturnTypeUID&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;entertainmentTypeUID&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;2018-03-31T00:00:00&quot;,&#xd;
+		&quot;totalCost&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="employees select" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;selectOptionCriteria&quot;: &quot;${employeeID}&quot;,&#xd;
+&#xd;
+		&quot;benefitClassName&quot;: &quot;&quot;,&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageNumber&quot;: 1,&#xd;
+			&quot;pageSize&quot;: 10&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;lastName&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}]&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi/admin/employees/select</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">personUID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..entityUid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="personUID validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;personUID&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;2018-03-31T00:00:00&quot;,&#xd;
+		&quot;totalCost&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="description validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;description&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;2018-03-31T00:00:00&quot;,&#xd;
+		&quot;totalCost&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="dateProvided validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+			&quot;fieldName&quot;: &quot;dateProvided&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="totalCost validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;totalCost&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;totalCost&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: &quot;${totalCost}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: false,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="inHouse validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;inHouse&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;totalCost&quot;, &quot;actualBenefitReturnTypeUID&quot;,&#xd;
+			&quot;inHouse&quot;&#xd;
+		]&#xd;
+&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: &quot;${totalCost}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: &quot;${inHouse}&quot;,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="inHouseCalcMethodCode validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;inHouseCalcMethodCode&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;totalCost&quot;, &quot;inHouse&quot;, &quot;inHouseCalcMethodCode&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: &quot;${totalCost}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: &quot;${inHouse}&quot;,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: ${inHouseCalcMethodCode},&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="employeeContributionEntered validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;employeeContributionEntered&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;totalCost&quot;, &quot;inHouse&quot;, &quot;inHouseCalcMethodCode&quot;, &quot;employeeContributionEntered&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: &quot;${totalCost}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: &quot;${inHouse}&quot;,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: ${inHouseCalcMethodCode},&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: &quot;${employeeContributionEntered}&quot;,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="save" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: null,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;entertainmentTypeUID&quot;, &quot;description&quot;, &quot;dateProvided&quot;, &quot;totalCost&quot;, &quot;inHouse&quot;, &quot;inHouseCalcMethodCode&quot;, &quot;employeeContributionEntered&quot;, &quot;actualBenefitReturnTypeUID&quot;]&#xd;
+	},&#xd;
+&#xd;
+	&quot;records&quot;: [{&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;entertainmentTypeUID&quot;: &quot;f7552245-a6d6-440b-b485-ba993850432b&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: null,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;totalCost&quot;: &quot;${totalCost}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;isExemptEntertainment&quot;: false,&#xd;
+		&quot;isExcludedFromPmntSmry&quot;: true,&#xd;
+		&quot;salaryPackagedBenefit&quot;: false,&#xd;
+		&quot;isApportionCost&quot;: false,&#xd;
+		&quot;totalCostGSTIncluded&quot;: 0,&#xd;
+		&quot;totalPersonAttendance&quot;: 0,&#xd;
+		&quot;totalEmployeeAttendance&quot;: 0,&#xd;
+		&quot;totalNonEmployeeAttendance&quot;: 0,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouse&quot;: &quot;${inHouse}&quot;,&#xd;
+		&quot;inHouseCalcMethodCode&quot;: ${inHouseCalcMethodCode},&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContributionEntered&quot;: &quot;${employeeContributionEntered}&quot;,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;calculationMethodUID&quot;: &quot;7b4437d1-9a05-4847-aece-b7ed8978c4c8&quot;,&#xd;
+		&quot;selectedGroupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;inHouseAmtApplied&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;twelveWeekRegisterPcDisplay&quot;: &quot;&quot;,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gst&quot;: 0.1,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;actualBenefitReturnTypeUID&quot;: &quot;7045b003-8a51-4715-bd8e-390b9d31720c&quot;,&#xd;
+		&quot;actualBenefitReturnType&quot;: null,&#xd;
+		&quot;register12weekBenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;split5050BenefitReturnTypeUID&quot;: &quot;47545f1b-1624-4999-a9b7-244eeddd9892&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;mealOrEFLE&quot;: true,&#xd;
+		&quot;firstValidation&quot;: false&#xd;
+	}]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/save</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Entertainment read" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageSize&quot;: 100,&#xd;
+			&quot;pageNumber&quot;: 1&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;benefitID&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}],&#xd;
+		&quot;groupBy&quot;: null,&#xd;
+		&quot;filters&quot;: {&#xd;
+			&quot;_apiEndpoint&quot;: &quot;/benefits/entertainment&quot;&#xd;
+		},&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/entertainment/read</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="filename">C:\Shanaka_Jmeter\Jmeter Project\fbtPerfTest\ProjectFiles\Create\entertainmentCreate.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">employeeID, description, dateProvided,  totalCost, inHouse, inHouseCalcMethodCode,employeeContributionEntered</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+        </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete All" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete All" enabled="true">
