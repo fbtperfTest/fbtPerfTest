@@ -64,7 +64,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="BASE_URL_1" elementType="Argument">
             <stringProp name="Argument.name">BASE_URL_1</stringProp>
-            <stringProp name="Argument.value">fbtapp-uat.onesourcetax.com</stringProp>
+            <stringProp name="Argument.value">mel-tlrbld-p29</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="password" elementType="Argument">
@@ -79,12 +79,7 @@
           </elementProp>
           <elementProp name="portnumber" elementType="Argument">
             <stringProp name="Argument.name">portnumber</stringProp>
-            <stringProp name="Argument.value">82</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="path" elementType="Argument">
-            <stringProp name="Argument.name">path</stringProp>
-            <stringProp name="Argument.value">C:\Shanaka_Jmeter\New folder\JmeterTest\JmeterTest</stringProp>
+            <stringProp name="Argument.value">5101</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -129,7 +124,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Main Control CSV Data Set Config" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">${path}\DataFile2.csv</stringProp>
+        <stringProp name="filename">..\DataFile2.csv</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -154,7 +149,7 @@
       </ThreadGroup>
       <hashTree>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
-          <stringProp name="IncludeController.includepath">C:\Shanaka_Jmeter\New folder\JmeterTest\JmeterTest\LoginOnly.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">C:\FBT Project\FBT Performance Test\fbtPerfTest\ProjectFiles\LoginOnly.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="reportingEntities/select" enabled="true">
