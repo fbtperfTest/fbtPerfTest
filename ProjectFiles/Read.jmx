@@ -10000,6 +10000,3437 @@ var client=&quot;${FirmId}&quot;;
           </CSVDataSet>
           <hashTree/>
         </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Loan Validate and Create Selection" enabled="true">
+          <stringProp name="IfController.condition">(&quot;${create}&quot;==&quot;1&quot;)&amp;&amp;(&quot;${workpaper}&quot; ==&quot;loan&quot;)</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="benefitId" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+				&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+	},&#xd;
+	&quot;numberRequired&quot;: 1&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/benefitId</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="benefitId validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;benefitID&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;benefitID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: null,&#xd;
+		&quot;loanOriginalStartDate&quot;: null,&#xd;
+		&quot;loanEndDate&quot;: null,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="employees select" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;selectOptionCriteria&quot;: &quot;${employeeID}&quot;,&#xd;
+&#xd;
+		&quot;benefitClassName&quot;: &quot;&quot;,&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageNumber&quot;: 1,&#xd;
+			&quot;pageSize&quot;: 10&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;lastName&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}]&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi/admin/employees/select</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">personUID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..entityUid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Employee validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;benefitID&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;benefitID&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: null,&#xd;
+		&quot;loanOriginalStartDate&quot;: null,&#xd;
+		&quot;loanEndDate&quot;: null,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="description validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;description&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: 0,&#xd;
+		&quot;dateProvided&quot;: null,&#xd;
+		&quot;loanOriginalStartDate&quot;: null,&#xd;
+		&quot;loanEndDate&quot;: null,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="loanAmount validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;loanAmount&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+		&quot;dateProvided&quot;: null,&#xd;
+		&quot;loanOriginalStartDate&quot;: null,&#xd;
+		&quot;loanEndDate&quot;: null,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="dateProvided validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;dateProvided&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;, &quot;dateProvided&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+&#xd;
+		&quot;loanOriginalStartDate&quot;: null,&#xd;
+		&quot;loanEndDate&quot;: null,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">loanOriginalStartDate</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..loanOriginalStartDate.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="loanEndDate validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;dateProvided&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;, &quot;dateProvided&quot;,&quot;loanEndDate&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+&#xd;
+		&quot;loanOriginalStartDate&quot;: &quot;${loanOriginalStartDate}&quot;,&#xd;
+		&quot;loanEndDate&quot;: &quot;${loanEndDate}&quot;,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: 0,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="loanBenefitAmount validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;loanBenefitAmount&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;, &quot;dateProvided&quot;, &quot;loanEndDate&quot;, &quot;loanBenefitAmount&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+&#xd;
+		&quot;loanOriginalStartDate&quot;: &quot;${loanOriginalStartDate}&quot;,&#xd;
+		&quot;loanEndDate&quot;: &quot;${loanEndDate}&quot;,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: &quot;${loanBenefitAmount}&quot;,&#xd;
+		&quot;businessPercent&quot;: 0,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="businessPercent validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;businessPercent&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;, &quot;dateProvided&quot;, &quot;loanEndDate&quot;, &quot;loanBenefitAmount&quot;,&quot;businessPercent&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+&#xd;
+		&quot;loanOriginalStartDate&quot;: &quot;${loanOriginalStartDate}&quot;,&#xd;
+		&quot;loanEndDate&quot;: &quot;${loanEndDate}&quot;,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: &quot;${loanBenefitAmount}&quot;,&#xd;
+		&quot;businessPercent&quot;: &quot;${businessPercent}&quot;,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Loan save" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;businessPercent&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;personUID&quot;, &quot;description&quot;, &quot;loanAmount&quot;, &quot;dateProvided&quot;, &quot;loanEndDate&quot;, &quot;loanBenefitAmount&quot;, &quot;businessPercent&quot;]&#xd;
+	},&#xd;
+	&quot;records&quot;: [{&#xd;
+		&quot;schedule&quot;: false,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;dateProvided&quot;: &quot;${dateProvided}&quot;,&#xd;
+		&quot;benefitID&quot;: &quot;${benefitID}&quot;,&#xd;
+		&quot;benefitValueUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;loanAmount&quot;: &quot;${loanAmount}&quot;,&#xd;
+&#xd;
+		&quot;loanOriginalStartDate&quot;: &quot;${loanOriginalStartDate}&quot;,&#xd;
+		&quot;loanEndDate&quot;: &quot;${loanEndDate}&quot;,&#xd;
+		&quot;currentYearOpeningBalance&quot;: 0,&#xd;
+		&quot;repayments&quot;: 0,&#xd;
+		&quot;closingBalance&quot;: 0,&#xd;
+		&quot;benchmarkInterestRate&quot;: 0.0525,&#xd;
+		&quot;statutoryInterest&quot;: 0,&#xd;
+		&quot;actualInterestRate&quot;: 0,&#xd;
+		&quot;actualInterest&quot;: 0,&#xd;
+		&quot;loanBenefitAmount&quot;: &quot;${loanBenefitAmount}&quot;,&#xd;
+		&quot;businessPercent&quot;: &quot;${businessPercent}&quot;,&#xd;
+		&quot;businessAmount&quot;: 0,&#xd;
+		&quot;exemptBenefits&quot;: false,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;valueOfReductions&quot;: 0,&#xd;
+		&quot;hasChangedFromUnscheduled&quot;: false,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;concessionAmount&quot;: 0,&#xd;
+		&quot;exPaymentSummary&quot;: false,&#xd;
+		&quot;groupTypeUID&quot;: &quot;4b921498-c119-4919-b8aa-a0e105ae961f&quot;,&#xd;
+		&quot;firstValidation&quot;: true&#xd;
+	}]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/save</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Loan read" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageSize&quot;: 100,&#xd;
+			&quot;pageNumber&quot;: 1&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;benefitID&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}],&#xd;
+		&quot;groupBy&quot;: null,&#xd;
+		&quot;filters&quot;: {&#xd;
+			&quot;_apiEndpoint&quot;: &quot;/benefits/loan&quot;&#xd;
+		},&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/loan/read</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">C:\Shanaka_Jmeter\Jmeter Project\fbtPerfTest\ProjectFiles\Create\loanCreate.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">employeeID, description, loanAmount, dateProvided, loanEndDate, loanBenefitAmount, businessPercent</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Vehicle Detail  Validate and Create Selection" enabled="true">
+          <stringProp name="IfController.condition">(&quot;${create}&quot;==&quot;1&quot;)&amp;&amp;(&quot;${workpaper}&quot; ==&quot;vehicle&quot;)</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="registrationNo validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;registrationNo&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: null,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: null,&#xd;
+		&quot;acquisitionDate&quot;: null,&#xd;
+		&quot;commitmentDate&quot;: null,&#xd;
+		&quot;disposalDate&quot;: null,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;L&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+		&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">191157</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://fbtapp-uat.onesourcetax.com:82/FBTWebApi/token" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="refresh_token" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">refresh_token</stringProp>
+                  <stringProp name="Argument.value">f8bc839b-7c4f-4bf7-8b3a-6f3b06a8498f</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="grant_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">grant_type</stringProp>
+                  <stringProp name="Argument.value">refresh_token</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">fbt-web-ui</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi/token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">23</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="description validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;description&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: null,&#xd;
+		&quot;acquisitionDate&quot;: null,&#xd;
+		&quot;commitmentDate&quot;: null,&#xd;
+		&quot;disposalDate&quot;: null,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;L&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay"></stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="employees select" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;selectOptionCriteria&quot;: &quot;${employeeID}&quot;,&#xd;
+&#xd;
+		&quot;benefitClassName&quot;: &quot;&quot;,&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageNumber&quot;: 1,&#xd;
+			&quot;pageSize&quot;: 10&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;lastName&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}]&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi/admin/employees/select</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">personUID</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..entityUid</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">29669</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="personUID validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;description&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: null,&#xd;
+		&quot;acquisitionDate&quot;: null,&#xd;
+		&quot;commitmentDate&quot;: null,&#xd;
+		&quot;disposalDate&quot;: null,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;L&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">5254</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="dateFirstHeld validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;dateFirstHeld&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: null,&#xd;
+		&quot;commitmentDate&quot;: null,&#xd;
+		&quot;disposalDate&quot;: null,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;L&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">11384</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">acquisitionDate</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..acquisitionDate.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">commitmentDate</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..commitmentDate.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="disposalDate validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+			&quot;fieldName&quot;: &quot;disposalDate&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;L&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">34665</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="vehicleCalculationMethodCode validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;vehicleCalculationMethodCode&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: 0,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">8007</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="daysUnavailable validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;daysUnavailable&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;daysUnavailable&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: 365,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: 0,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">201382</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">daysAvailable</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..daysAvailable.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="baseValue validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+			&quot;fieldName&quot;: &quot;baseValue&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: 0,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: 0,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: 0,&#xd;
+		&quot;wdv&quot;: 0,&#xd;
+		&quot;deemedDepreciation&quot;: 0,&#xd;
+		&quot;deemedInterest&quot;: 0,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: 0,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">15272</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">adjustedBaseValue</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..adjustedBaseValue.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">wdv</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..wdv.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">wdv</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..wdv.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">statutoryRate</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..statutoryRate.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">deemedDepreciation</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..deemedDepreciation.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">fbtYear</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..fbtYear.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">deemedInterest</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..deemedInterest.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="employeeContribution validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;employeeContribution&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;employeeContribution&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: 0,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9959</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="openingKm validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;employeeContribution&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;employeeContribution&quot;,&quot;openingKm&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: 0,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">10097</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="closingKm validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;closingKm&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;closingKm&quot;, &quot;employeeContribution&quot;]&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: 0,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: 0,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">10769</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">annualisedKm</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..annualisedKm.value</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostLeaseCharges validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+	&quot;fieldName&quot;: &quot;opCostLeaseCharges&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;employeeContribution&quot;]&#xd;
+		},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: 0,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">7512</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostRegistration validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;opCostRegistration&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;employeeContribution&quot;]&#xd;
+	},	&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: 0,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">6908</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostInsurance validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;opCostInsurance&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;employeeContribution&quot;,&quot;opCostInsurance&quot;]&#xd;
+&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: 0,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9737</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostFuel validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;opCostFuel&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;employeeContribution&quot;]&#xd;
+	&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: 0,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">82</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9567</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostRepairs validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;opCostRepairs&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;opCostRepairs&quot;, &quot;employeeContribution&quot;]&#xd;
+	&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: &quot;${opCostRepairs}&quot;,&#xd;
+		&quot;opCostOther&quot;: 0,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="opCostOther validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+			&quot;fieldName&quot;: &quot;opCostOther&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;opCostRepairs&quot;, &quot;opCostOther&quot;, &quot;employeeContribution&quot;]&#xd;
+&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: &quot;${opCostRepairs}&quot;,&#xd;
+		&quot;opCostOther&quot;: &quot;${opCostOther}&quot;,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: 0,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9814</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="businessPercentage validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+			&quot;fieldName&quot;: &quot;businessPercentage&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;opCostRepairs&quot;, &quot;opCostOther&quot;, &quot;businessPercentage&quot;, &quot;employeeContribution&quot;]&#xd;
+&#xd;
+	},&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: &quot;${opCostRepairs}&quot;,&#xd;
+		&quot;opCostOther&quot;: &quot;${opCostOther}&quot;,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: &quot;${businessPercentage}&quot;,&#xd;
+		&quot;logbookYear&quot;: 0,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9931</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="logbookYear /validate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: &quot;logbookYear&quot;,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;opCostRepairs&quot;, &quot;opCostOther&quot;, &quot;businessPercentage&quot;, &quot;logbookYear&quot;, &quot;employeeContribution&quot;]&#xd;
+	},&#xd;
+&#xd;
+	&quot;record&quot;: {&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: &quot;${opCostRepairs}&quot;,&#xd;
+		&quot;opCostOther&quot;: &quot;${opCostOther}&quot;,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: &quot;${businessPercentage}&quot;,&#xd;
+		&quot;logbookYear&quot;: &quot;{logbookYear}&quot;,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/validate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">13662</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="save" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;,&#xd;
+		&quot;fieldName&quot;: null,&#xd;
+		&quot;dirtyFields&quot;: [&quot;registrationNo&quot;, &quot;description&quot;, &quot;dateFirstHeld&quot;, &quot;disposalDate&quot;, &quot;vehicleCalculationMethodCode&quot;, &quot;baseValue&quot;, &quot;opCostLeaseCharges&quot;, &quot;opCostRegistration&quot;, &quot;opCostInsurance&quot;, &quot;opCostFuel&quot;, &quot;opCostRepairs&quot;, &quot;opCostOther&quot;, &quot;businessPercentage&quot;, &quot;logbookYear&quot;, &quot;employeeContribution&quot;]&#xd;
+	},&#xd;
+&#xd;
+	&quot;records&quot;: [{&#xd;
+		&quot;vehicleUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;registrationNo&quot;: &quot;${registrationNo}&quot;,&#xd;
+		&quot;description&quot;: &quot;${description}&quot;,&#xd;
+		&quot;isShared&quot;: false,&#xd;
+		&quot;vehicleAllocationMethodCode&quot;: &quot;P&quot;,&#xd;
+		&quot;unallocatedPercentage&quot;: 0,&#xd;
+		&quot;personUID&quot;: &quot;${personUID}&quot;,&#xd;
+		&quot;regionUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;costCenterUID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,&#xd;
+		&quot;fringeBenefitType&quot;: &quot;C&quot;,&#xd;
+		&quot;dateFirstHeld&quot;: &quot;${dateFirstHeld}&quot;,&#xd;
+		&quot;acquisitionDate&quot;: &quot;${acquisitionDate}&quot;,&#xd;
+		&quot;commitmentDate&quot;: &quot;${commitmentDate}&quot;,&#xd;
+		&quot;disposalDate&quot;: &quot;${disposalDate}&quot;,&#xd;
+		&quot;vehicleCalculationMethodCode&quot;: &quot;${vehicleCalculationMethodCode}&quot;,&#xd;
+		&quot;statutoryFormulaRuleCode&quot;: null,&#xd;
+		&quot;daysUnavailable&quot;: &quot;${daysUnavailable}&quot;,&#xd;
+		&quot;daysAvailable&quot;: &quot;${daysAvailable}&quot;,&#xd;
+		&quot;vehiclePurchaseTypeCode&quot;: &quot;O&quot;,&#xd;
+		&quot;groupTypeUID&quot;: &quot;73ed6487-6f67-4d3b-9fd5-0973e4e8356d&quot;,&#xd;
+		&quot;baseValue&quot;: &quot;${baseValue}&quot;,&#xd;
+		&quot;isAddGSTRequired&quot;: false,&#xd;
+		&quot;baseValueWithGst&quot;: 0,&#xd;
+		&quot;adjustedBaseValue&quot;: &quot;${adjustedBaseValue}&quot;,&#xd;
+		&quot;openingKm&quot;: &quot;${openingKm}&quot;,&#xd;
+		&quot;closingKm&quot;: &quot;${closingKm}&quot;,&#xd;
+		&quot;annualisedKm&quot;: &quot;${annualisedKm}&quot;,&#xd;
+		&quot;statutoryRate&quot;: &quot;${statutoryRate}&quot;,&#xd;
+		&quot;statutoryFormulaTaxableValue&quot;: &quot;${statutoryFormulaTaxableValue}&quot;,&#xd;
+		&quot;wdv&quot;: &quot;${wdv}&quot;,&#xd;
+		&quot;deemedDepreciation&quot;: &quot;${deemedDepreciation}&quot;,&#xd;
+		&quot;deemedInterest&quot;: &quot;${deemedInterest}&quot;,&#xd;
+		&quot;opCostLeaseCharges&quot;: &quot;${opCostLeaseCharges}&quot;,&#xd;
+		&quot;opCostRegistration&quot;: &quot;${opCostRegistration}&quot;,&#xd;
+		&quot;opCostInsurance&quot;: &quot;${opCostInsurance}&quot;,&#xd;
+		&quot;opCostFuel&quot;: &quot;${opCostFuel}&quot;,&#xd;
+		&quot;opCostRepairs&quot;: &quot;${opCostRepairs}&quot;,&#xd;
+		&quot;opCostOther&quot;: &quot;${opCostOther}&quot;,&#xd;
+		&quot;opCostTransaction&quot;: 0,&#xd;
+		&quot;opCostTotal&quot;: 0,&#xd;
+		&quot;businessPercentage&quot;: &quot;${businessPercentage}&quot;,&#xd;
+		&quot;logbookYear&quot;: &quot;{logbookYear}&quot;,&#xd;
+		&quot;operatingCostTaxableValue&quot;: 0,&#xd;
+		&quot;vehicleEngineCapacityCode&quot;: &quot;&quot;,&#xd;
+		&quot;centsPerKm&quot;: 0,&#xd;
+		&quot;privateKm&quot;: 0,&#xd;
+		&quot;centsPerKmTaxableValue&quot;: 0,&#xd;
+		&quot;actualCalculationMethodCode&quot;: &quot;S&quot;,&#xd;
+		&quot;isExempt&quot;: false,&#xd;
+		&quot;isExcluded&quot;: false,&#xd;
+		&quot;grossTaxableAmount&quot;: 0,&#xd;
+		&quot;employeeContribution&quot;: &quot;${employeeContribution}&quot;,&#xd;
+		&quot;employeeContributionApplied&quot;: 0,&#xd;
+		&quot;excessEmployeeContribution&quot;: 0,&#xd;
+		&quot;taxableAmount&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmount&quot;: 0,&#xd;
+		&quot;taxPayable&quot;: 0,&#xd;
+		&quot;reportableAmount&quot;: 0,&#xd;
+		&quot;daysHeldForUseByProvider&quot;: 365,&#xd;
+		&quot;exemptGUTA17000Applied&quot;: 0,&#xd;
+		&quot;exemptGUTA30000Applied&quot;: 0,&#xd;
+		&quot;fbtYear&quot;: &quot;${fbtYear}&quot;,&#xd;
+		&quot;grossedUpTaxableAmt17000&quot;: 0,&#xd;
+		&quot;grossedUpTaxableAmt30000&quot;: 0,&#xd;
+		&quot;gstPercent&quot;: 0,&#xd;
+		&quot;rebateApplied&quot;: 0,&#xd;
+		&quot;standardCategoryID&quot;: 0,&#xd;
+		&quot;taxPayableRebate&quot;: 0,&#xd;
+		&quot;taxPayable17000&quot;: 0,&#xd;
+		&quot;taxPayable30000&quot;: 0,&#xd;
+		&quot;unCappedRFBA&quot;: 0,&#xd;
+		&quot;reportUnitUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+&#xd;
+	}]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/save</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">9726</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="vehicle details read" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;parameters&quot;: {&#xd;
+		&quot;pageInfo&quot;: {&#xd;
+			&quot;pageSize&quot;: 100,&#xd;
+			&quot;pageNumber&quot;: 1&#xd;
+		},&#xd;
+		&quot;sortDescriptors&quot;: [{&#xd;
+			&quot;columnName&quot;: &quot;registrationNo&quot;,&#xd;
+			&quot;isDescending&quot;: false&#xd;
+		}],&#xd;
+		&quot;groupBy&quot;: null,&#xd;
+		&quot;filters&quot;: {&#xd;
+			&quot;_apiEndpoint&quot;: &quot;/benefits/vehicle/details&quot;&#xd;
+		},&#xd;
+		&quot;periodUID&quot;: &quot;${year}&quot;,&#xd;
+		&quot;clientUID&quot;: &quot;${client}&quot;,&#xd;
+		&quot;reportingEntityUID&quot;: &quot;${reportingEntityUID}&quot;&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port">${portnumber}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">FBTWebApi//benefits/vehicle/details/read</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="x-period-uid" elementType="Header">
+                  <stringProp name="Header.name">x-period-uid</stringProp>
+                  <stringProp name="Header.value">94896122-6d79-4bdf-b966-febc66aced8a</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer DvT8tDXKaLEa-1Rfb-NheWw0jUjqfalmWxqupdttMCDwAfZhT_2w97ToYYnwdTSjVc627VfbOs2a2r-HydYVQMfgya7gpzkAeHoH86MRVn1X3PGZkureKVf-2BQdgySWpe_JaifwnFlPl43OlSusDiWyL7T7C6f0l6sOKBFFlq6m3Z0j_ahXyHsGaGsA1BQKB2ixlBs_JlP7Nc551KJV1_Qt8QywsNa25WilDBsFkbS3O9UzFTgkJ-NcrPNmbiEe7_PefQFvc-hKh2DhvNME2NNK9o2KiNwX2sIGjmJinnpvmVuGIjodnbu7ZEVvLVh5uLiEENyQ6uJNf6sUGc-Eqa_es08</stringProp>
+                </elementProp>
+                <elementProp name="x-reporting-entity-uid" elementType="Header">
+                  <stringProp name="Header.name">x-reporting-entity-uid</stringProp>
+                  <stringProp name="Header.value">5b692197-1b01-4765-8f6c-68bab6fde455</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="x-client-uid" elementType="Header">
+                  <stringProp name="Header.name">x-client-uid</stringProp>
+                  <stringProp name="Header.value">1ee5c2fe-24da-4d06-8091-bff8fc855bbd</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">10819</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">C:\Shanaka_Jmeter\Jmeter Project\fbtPerfTest\ProjectFiles\Create\vehicleDetailCreate.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">registrationNo,description,employeeID,dateFirstHeld,disposalDate,vehicleCalculationMethodCode,daysUnavailable,baseValue,employeeContribution,openingKm,closingKm,opCostLeaseCharges, opCostRegistration ,opCostInsurance,opCostFuel opCostRepairs ,opCostOther ,businessPercentage  ,logbookYear</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+        </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete All" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete All" enabled="true">
